@@ -180,7 +180,7 @@ color:#2e2e2e;
 .icon-home:before {
     position: absolute;
     content: '';
-    background:url(/icons/Home.png);
+    background:url(./icons/Home.png);
     background-size:cover;
     position:absolute;
     width:20px;
@@ -191,7 +191,7 @@ color:#2e2e2e;
 .icon-income:before {
     position: absolute;
     content: '';
-    background:url(/icons/Income.png);
+    background:url(./icons/Income.png);
     background-size:cover;
     position:absolute;
     width:20px;
@@ -202,7 +202,7 @@ color:#2e2e2e;
 .icon-expense:before {
     position: absolute;
     content: '';
-    background:url(/icons/Expense.png);
+    background:url(./icons/Expense.png);
     background-size:cover;
     position:absolute;
     width:20px;
@@ -213,7 +213,7 @@ color:#2e2e2e;
 .icon-subscription:before { 
     position: absolute;
     content: '';
-    background:url(/icons/Subscription.png);
+    background:url(./icons/Subscription.png);
     background-size:cover;
     position:absolute;
     width:20px;
