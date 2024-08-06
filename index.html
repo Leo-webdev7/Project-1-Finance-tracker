@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body class="light-scheme"> <!-- Default to light scheme -->
+    <header class="bg-dark text-light py-3">
+        <nav>
+            <h1>Finance Tracker</h1>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <aside id="nav_sidebar" class="bg-dark text-light py-3">
+            <a href="#home" data-page="home" class="icon-home">Home</a>
+            <a href="#income" data-page="income" class="icon-income">Income</a>
+            <a href="#expense" data-page="expense" class="icon-expense">Expense</a>
+            <a href="#subscription" data-page="subscription" class="icon-subscription">Subscription</a>
+        </aside>
+        <main>
+            <!-- Home Page -->
+            <!-- input form -->
+            <section id="home-page" class="page">
+
+                <!-- cards suppose to be here -->
+                <div class="cards">
+                    <div class="card" id="us-bank-card">
+                        <p>Us Bank</p>
+                        <span id="usBankAccountAmount"></span>
+                    </div>
+                    <div class="card" id="wells-fargo-card">
+                        <p>Wells Fargo</p>
+                        <span id="wfBankAccountAmount"></span>
+                    </div>
+                    <div class="card" id="cash-account-card">
+                        <p>Cash Account</p>
+                        <span id="cashAccountAmount"></span>
+                    </div>
+                    <div class="card" id="wifes-account-card">
+                        <p>Wife`s Account</p>
+                        <span id="wifesAccountAmount"></span>
+                    </div>
+                    <div class="card" id="saving-account-card">
+                        <p>Saving Account</p>
+                        <span id="savingAccountAmount"></span>
+                    </div>
+                </div>
+
+
+                <h2 class="input-p">Input data here:</h2>
+                <div class="inputs">
+                    <div class="input">
+                        <label for="select" class="select-header">Income:</label>
+                        <label for="date">Date:</label>
+                        <input type="date" id="incomeDate" name="date" required minlength="4" maxlength="8" size="10" />
+                        <label for="income-source">Source:</label>
+                        <input type="text" id="incomeSource" name="income-source" required minlength="" maxlength=""
+                            size="10" />
+                        <label for="amount">Amount:</label>
+                        <input type="text" id="incomeAmount" name="amount" required minlength="4" maxlength="8"
+                            size="10" />
+
+                        <label for="option-select">Choose your account:</label>
+                        <select name="options" id="optionselectIncome">
+                            <option value="Us Bank">US Bank</option>
+                            <option value="Wells Fargo">Wells Fargo</option>
+                            <option value="Cash Account">Cash Account</option>
+                            <option value="Wife`s Account">Wife`s Account</option>
+                            <option value="Savings Account">Saving Account</option>
+                        </select>
+                        <button type="submit" class="submit" id="income">Submit</button>
+                    </div>
+
+                    <dialog id="incomeDialog">
+                        <form method="dialog">
+                            <p>Please complete the form!</p>
+                            <div class="dialog-buttons">
+                                <button id="ok" type="submit">YES</button>
+                                <button id="cancel" type="reset">NO</button>
+                            </div>
+                        </form>
+                    </dialog>
+
+
+
+                    <div class="input">
+                        <label for="select" class="select-header">Expense:</label>
+                        <label for="date">Date:</label>
+                        <input type="date" id="expenseDate" name="date" required minlength="4" maxlength="8"
+                            size="10" />
+                        <label for="expense-source">Source:</label>
+                        <input type="text" id="expenseSource" name="expense-source" required minlength="" maxlength=""
+                            size="10" />
+                        <label for="amount">Amount:</label>
+                        <input type="text" id="expenseAmount" name="amount" required minlength="4" maxlength="8"
+                            size="10" />
+
+                        <label for="option-select">Choose your account:</label>
+                        <select name="options" id="optionselectExpense">
+                            <option value="Us Bank">US Bank</option>
+                            <option value="Wells Fargo">Wells Fargo</option>
+                            <option value="Cash Account">Cash Account</option>
+                            <option value="Wife`s Account">Wife`s Account</option>
+                            <option value="Savings Account">Saving Account</option>
+                        </select>
+                        <button type="submit" class="submit" id="expense">Submit</button>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+            <!-- Income Page -->
+            <section id="income-page" class="page">
+                <h2>Income</h2>
+                <button id="download-income-csv" class="btn btn-secondary">Download Income CSV</button>
+                <div class="table table-bordered table-striped mt-3 styled-table" id="income-table">
+                    <table class="styled-table">
+                        <thead>
+                            <tr class="table-columns">
+                                <th>Date</th>
+                                <th>Income Source</th>
+                                <th>Amount $</th>
+                                <th>Account</th>
+                            </tr>
+                        </thead>
+                        <tbody id="income-elements">
+                            <tr>
+                                <td id="date"></td>
+                                <td id="salary"></td>
+                                <td id="amount"></td>
+                                <td id="account"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Expense Page -->
+            <section id="expense-page" class="page">
+                <h2>Expense</h2>
+                <button id="download-expense-csv" class="btn btn-secondary">Download Expense CSV</button>
+                <div class="table table-bordered table-striped mt-3 styled-table" id="expense-table">
+                    <table class="styled-table">
+                        <thead>
+                            <tr class="table-columns">
+                                <th>Date</th>
+                                <th>Expense Source</th>
+                                <th>Amount $</th>
+                                <th>Account</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expense-elements">
+                            <tr>
+                                <td id="date">24.04.2024</td>
+                                <td id="salary">Rent payment</td>
+                                <td id="amount">1300</td>
+                                <td id="account">US Bank</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Subscription Page (Placeholder) -->
+            <section id="subscription-page" class="page">
+                <h2>Subscription</h2>
+                <p>Manage your subscriptions here.</p>
+            </section>
+        </main>
+    </div>
+    <footer id="footer" class="bg-dark text-light py-3 text-center">
+        <p>Project 1 | Group 4 | Bee Vang, Kevin Perez, Leonid Shapirov</p>
+        <a href="#" id="toggle-scheme" class="text-light">Switch to Dark Mode</a>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
