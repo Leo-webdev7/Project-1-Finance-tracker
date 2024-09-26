@@ -1,4 +1,4 @@
-# Simple Finance Tracker
+# Finance Tracker
 
 ## Description
 A finance tracker designed to help users keep track of income and manage their budget. Users will be able to input where their money is being spent, plan their finances, set up savings, and set financial goals.
